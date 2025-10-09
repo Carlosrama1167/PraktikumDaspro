@@ -1,0 +1,37 @@
+package jobsheet5;
+import java.util.Scanner;
+
+public class AksesWifi {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input Jenis Pengguna
+        System.out.print("Masukkan Jenis Pengguna (dosen/mahasiswa): ");
+        String jenisPengguna = input.nextLine();
+
+        // Keputusan 1: Apakah Jenis Pengguna == dosen
+        if (jenisPengguna.equalsIgnoreCase("dosen")) {
+            System.out.println("Akses diberikan (dosen)");
+        } else {
+            // Keputusan 2: Apakah Jenis Pengguna == mahasiswa
+            if (jenisPengguna.equalsIgnoreCase("mahasiswa")) {
+                // Input Jumlah SKS
+                System.out.print("Masukkan Jumlah SKS: ");
+                int jumlahSKS = input.nextInt();
+                input.nextLine(); // Consume newline left-over
+
+                // Keputusan 3: Apakah Jumlah SKS >= 12
+                if (jumlahSKS >= 12) {
+                    System.out.println("Akses WIFI diberikan (Mahasiswa aktif)");
+                } else {
+                    System.out.println("Akses ditolak, SKS Kurang dari 12");
+                }
+            } else {
+                System.out.println("Akses ditolak");
+            }
+        }
+
+        input.close();
+    }
+}
