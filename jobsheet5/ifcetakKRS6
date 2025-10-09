@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class ifcetakKRS6{
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("--- Cetak KRS Siakad ---");
+        System.out.println("Apakah UKT sudah lunas? (true/false)");
+        boolean uktlunas = sc.nextBoolean();
+
+        if (uktlunas) {
+            pesan = "pembayaran UKT terverivikasi";
+        } else {
+            pesan = "UKT belum lunas";
+        }
+        
+    }
+}
