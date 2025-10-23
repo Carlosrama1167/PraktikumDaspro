@@ -7,11 +7,14 @@ public class siakadfor06 {
         Scanner input = new Scanner(System.in);
 
         double nilai; 
-        double tertinggi = 0;
-        double terendah = 100;
+        double tertinggi = 60;
+        double terendah = 60;
+        int lulus = 0;
+        int tidaklulus = 0;
 
-        for (int i = 1; i <= 10; i++){
-            System.out.println("Masukkan nilai mahasiswa ke-" + i + ": ");
+
+        for (int i = 0; i <= 10; i++){
+            System.out.print("Masukkan nilai mahasiswa ke-" + i + ": ");
             nilai = input.nextDouble();
             if (nilai > tertinggi){
                 tertinggi = nilai;
@@ -19,8 +22,15 @@ public class siakadfor06 {
             if (nilai < terendah){
                 terendah = nilai;
             }
+            if (nilai > 60){
+                lulus++;
+            } else {
+                tidaklulus++;
+            }
         }
         System.out.println("nilai tertinggi: " + tertinggi);
-        System.out.println("Nilai terendah: " + terendah);
+        System.out.println("nilai terendah: " + terendah);
+        System.out.println("Mahasiswa lulus: " + lulus);
+        System.out.println("Mahasiswa lulus: " + tidaklulus);
     }
 }
