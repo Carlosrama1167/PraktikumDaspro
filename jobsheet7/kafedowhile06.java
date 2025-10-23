@@ -3,6 +3,8 @@ package jobsheet7;
 import java.util.Scanner;
 
 public class kafedowhile06 {
+    public static void main(String[] args) {
+        
     Scanner input = new Scanner(System.in);
 
     int kopi; 
@@ -32,5 +34,6 @@ public class kafedowhile06 {
         System.out.println("Total yang harus dibayar: Rp " + totalharga);
         input.nextLine();
     } while (true) ;
-
+    System.out.println("Semua transaksi selesai.");
+    }
 }
