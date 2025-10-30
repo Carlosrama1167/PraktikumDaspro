@@ -56,7 +56,5 @@ public class tugas1 {
         System.out.println("\n--- Rekapitulasi Penjualan Harian ---");
         System.out.println("Total tiket terjual: " + ttiket + " tiket");
         System.out.printf("Total harga penjualan: Rp %,.0f\n", tpembayaran); 
-
-        input.close();
     }
 }
