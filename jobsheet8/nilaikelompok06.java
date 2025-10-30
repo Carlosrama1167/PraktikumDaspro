@@ -7,7 +7,12 @@ public class nilaikelompok06 {
         Scanner input = new Scanner(System.in);
 
         int  nilai;
-        float totalnilai, ratanilai;
+        float totalnilai;
+        float ratanilai;
+
+        int keltertinggi = 0;
+        float ratatertinggi = 0;
+
         int i = 1;
         while (i <= 6){
             System.out.println("kelompok " + i);
@@ -19,9 +24,16 @@ public class nilaikelompok06 {
                 totalnilai += nilai;
             }
             ratanilai = totalnilai / 5;
+            if (ratanilai > ratatertinggi){
+                ratatertinggi = ratanilai;
+                keltertinggi = i;
+            }
             System.out.print("kelompok " + i);
             System.out.println(": nilai rata-rata = " + ratanilai);
             i++;
         }
+        System.out.println("Hasil Kelompok tertinggi");
+        System.out.println("kelompok tertinggi " + keltertinggi );
+        System.out.println("Nilai rata-rata kelompok : " + ratatertinggi);
     }
 }

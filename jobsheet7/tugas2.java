@@ -9,8 +9,7 @@ public class tugas2 {
         int tarif = 0;
         String kendaraan;
         int waktu;
-        int tParkir;
-
+       
         System.out.println("=== Program Pembayaran Tiket ===");
         System.out.println("Tolong taati peraturan dan antri"); 
 
