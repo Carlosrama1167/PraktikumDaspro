@@ -15,8 +15,8 @@ public class tugas2 {
             } else if (i == 4){
                 System.out.print("3   3 ");
             }
-            for (int j = 1; j <= 5; j++){
-                if (i == 1 || i == n || j == 1 || j ==5){
+            for (int j = 1; j <= n; j++){
+                if (i == 1 || i == n || j == 1 || j == n){
                     System.out.print("5 ");
                 }else {
                     System.out.print("  ");
