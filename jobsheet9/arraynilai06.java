@@ -8,12 +8,16 @@ public class arraynilai06 {
 
         int [] nilaiakhir = new int [10];
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < nilaiakhir.length; i++){
             System.out.print("Masukkan nilai akhir ke-" + i + " : ");
             nilaiakhir [i] = input.nextInt();
         }
         for (int i = 0; i < 10; i++){
-            System.out.println("nilai akhir ke-" + i + " adalah " + nilaiakhir[i]);
+            if (nilaiakhir [i] > 70){
+                System.out.println("Mahsiswa ke-" + i + " lulus! " );
+            } else if (nilaiakhir [i] < 70){
+                System.out.println("Mahsiswa ke-" + i + " Tidak lulus! " );
+            }
         }
     }
 }
