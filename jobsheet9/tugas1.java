@@ -43,6 +43,6 @@ public class tugas1 {
         System.out.println("rata rata nilai = " + rata);
         System.out.println("Mahasiswa nilai tertinggi = " + mhstertinggi);
         System.out.println("Mahasiswa nilai terrendah = " + mhsterrendah);
-       
+        input.close();
     }
 }
