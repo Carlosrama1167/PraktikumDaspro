@@ -12,7 +12,11 @@ public class ifcetakKRS06{
         if (uktlunas) {
         System.out.println("pembayaran UKT terverivikasi");
         System.out.println("silahkan cetak KRS dan minta tanda tangan DPA");
+        } else {
+            
         }
+
+        
         
     }
 }

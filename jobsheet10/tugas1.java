@@ -42,5 +42,7 @@ public class tugas1 {
         System.out.println("=========================");
         double total = totalsemua / 60;
         System.out.println("Rata-rata keseluruhan survey : " + total );
+        
+        input.close();
     }
 }
