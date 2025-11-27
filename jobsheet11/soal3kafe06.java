@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class soal3kafe06 {
     
     public static int hitungtotalharga06(int pilihanmenu, int banyakitem) {
+       
         int[] hargaitems = {15000, 20000, 22000, 12000, 10000, 18000}; 
 
         if (pilihanmenu >= 1 && pilihanmenu <= hargaitems.length) {
@@ -16,10 +17,10 @@ public class soal3kafe06 {
     }
 
     public static int hitungTotalHargaDiskon06(int totalHargaAwal, String kodePromo) {
-        double diskon = 0; 
+        double diskon = 0;
         double jumlahDiskonRupiah = 0;
         
-        System.out.println("\n[PROMO APLIKASI]");
+        System.out.println("\n[APLIKASI DISKON PROMO]");
 
         if (kodePromo.equals("DISKON50")) {
             diskon = 0.50; 
@@ -31,19 +32,19 @@ public class soal3kafe06 {
             jumlahDiskonRupiah = totalHargaAwal * diskon;
             System.out.println("Kode Promo: DISKON30 - Diskon 30% Diterapkan!");
             System.out.println("Diskon yang Anda dapatkan: Rp " + (int)jumlahDiskonRupiah);
-        } else {
+        } else if (!kodePromo.isEmpty()) { 
             System.out.println("Kode promo '" + kodePromo + "' tidak valid. Tidak ada pengurangan harga.");
         }
         
         int totalHargaAkhir = totalHargaAwal - (int)jumlahDiskonRupiah;
         return totalHargaAkhir;
     }
-
+    
     public static void menu(String namapelanggan, boolean ismember, String kodepromo) {
         System.out.println("Selamat datang, " + namapelanggan + "!");
 
         if (ismember) {
-            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian (dihitung di kasir).");
+            System.out.println("Anda adalah member, dapatkan diskon 10% tambahan (dihitung di total akhir).");
         } 
         
         System.out.println("------------------------------");
@@ -55,7 +56,6 @@ public class soal3kafe06 {
         System.out.println("5. Roti Bakar - Rp 10.000");
         System.out.println("6. Mie Goreng - Rp 18.000");
         System.out.println("==============================");
-        System.out.println("Silahkan pilih menu yang anda inginkan");
     }
 
     public static void main(String[] args) {
@@ -64,25 +64,40 @@ public class soal3kafe06 {
         String namaPelanggan = "Rama";
         boolean isMember = true;
         String kodePromoPelanggan = "DISKON50"; 
+        char tambahLagi;
         
-        menu(namaPelanggan, isMember, kodePromoPelanggan); 
-        
-        System.out.println("------------------------------");
-        System.out.print("\n Masukkan nomor menu yang dipilih (1-6): ");
-        int pilihanmenu = input.nextInt();
+        int totalHargaKeseluruhan = 0; 
 
-        System.out.print(" Masukkan banyak item yang dibeli : ");
-        int banyakitem = input.nextInt();
-      
-        int totalHargaAwal = hitungtotalharga06(pilihanmenu, banyakitem);
+        menu(namaPelanggan, isMember, kodePromoPelanggan);
         
         System.out.println("------------------------------");
-        System.out.println(" Total harga sebelum diskon: Rp " + totalHargaAwal);
-        
-        int totalHargaFinal = hitungTotalHargaDiskon06(totalHargaAwal, kodePromoPelanggan);
 
-        System.out.println("\n Total harga yang harus dibayar : Rp " + totalHargaFinal);
+        do {
+            System.out.print("\nMasukkan nomor menu yang dipilih (1-6): ");
+            int pilihanmenu = input.nextInt();
+            
+            System.out.print("Masukkan banyak item yang dibeli : ");
+            int banyakitem = input.nextInt();
+
+            int hargaItemSaatIni = hitungtotalharga06(pilihanmenu, banyakitem);
+            
+            totalHargaKeseluruhan += hargaItemSaatIni; 
+
+            System.out.println("Subtotal item ini: Rp " + hargaItemSaatIni);
+
+            System.out.print("Apakah Anda ingin menambah pesanan lagi? (y/t): ");
+            tambahLagi = input.next().charAt(0);
+            
+        } while (tambahLagi == 'y' || tambahLagi == 'Y');
+        
+        System.out.println("==============================");
+        System.out.println("TOTAL HARGA MENTAH KESELURUHAN: Rp " + totalHargaKeseluruhan);
+        
+        int totalHargaFinalSetelahPromo = hitungTotalHargaDiskon06(totalHargaKeseluruhan, kodePromoPelanggan);
+        
         System.out.println("------------------------------");
+        System.out.println("TOTAL AKHIR YANG HARUS DIBAYAR: Rp " + totalHargaFinalSetelahPromo);
+        System.out.println("==============================");
         
         input.close(); 
     }
