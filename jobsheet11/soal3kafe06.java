@@ -1,5 +1,5 @@
 package jobsheet11;
 
-public class 3kafe06 {
+public class soal3kafe06 {
     
 }
