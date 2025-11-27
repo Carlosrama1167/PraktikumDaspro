@@ -1,6 +1,6 @@
 package jobsheet11;
 
-public class tugas3 {
+public class tugas3a {
 
     // Konstanta untuk ukuran array
     static String[] NAMA_MENU = {"Kopi", "Teh", "Es Kelapa Muda", "Roti Bakar", "Gorengan"};
@@ -9,7 +9,7 @@ public class tugas3 {
 
     static int[][] penjualan;
 
-    public tugas3() {
+    public tugas3a() {
         this.penjualan = new int[JUMLAH_MENU][JUMLAH_HARI];
     }
    
@@ -89,7 +89,7 @@ public class tugas3 {
     }
 
     public static void main(String[] args) {
-        tugas3 rekap = new tugas3();
+        tugas3a rekap = new tugas3a();
 
         rekap.isianDataPenjualan();
 
