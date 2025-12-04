@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class CM06_Rama {
+public class CM2_Rama {
 
     static int MAX_PENDAFTAR = 100;
     static int JMLH_ATRIBUT = 6;
