@@ -18,6 +18,7 @@ public class percobaan1 {
     }
 
     public static void main(String[] args) {
+        System.out.println("Faktorial Rekursif dan Literatif dari 5 adalah : ");
         System.out.println(faktorialrekursif(5));
         System.out.println(faktorialliteratif(5));
     }
