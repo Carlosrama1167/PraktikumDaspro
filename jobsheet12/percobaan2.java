@@ -19,6 +19,7 @@ public class percobaan2 {
         System.out.print("Pangkat : ");
         int pangkat = input.nextInt();
 
+        System.out.println("hasil pangkatnya adalah : ");
         System.out.println(hitungpangkat(bilangan, pangkat));
     }
 }
